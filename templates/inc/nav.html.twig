@@ -1,0 +1,24 @@
+<nav>
+    <ul>
+
+        {# bouton visible dans tout les cas #}
+        <a href="{{ path('app_accueil') }}" title="Accueil">Accueil</a>
+
+        {% if app.user %}
+
+            {# bouton visible si l'utilisateur est connécté #}
+
+            {% if is_granted("ROLE_ADMIN") %}
+
+                {# bouton visible si l'utilisateur connecté a le role administrateur #}
+
+            {% endif %}
+
+        {% else %}
+
+            {# bouton visible si l'utilisateur n'est pas connecté #}
+
+        {% endif %}
+
+    </ul>
+</nav>
