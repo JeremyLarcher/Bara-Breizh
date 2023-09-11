@@ -2,7 +2,10 @@
     <ul>
 
         {# bouton visible dans tout les cas #}
-        <a href="{{ path('app_accueil') }}" title="Accueil">Accueil</a>
+        <a href="{{ path('accueil_index') }}" title="Accueil">Accueil</a>
+        <a href="{{ path('contact_afficher') }}" title="Accueil">Contact</a>
+        <a href="{{ path('menu_afficher') }}" title="Accueil">Menu</a>
+        <a href="{{ path('partenaireslocaux_afficher') }}" title="Accueil">Partenaires Locaux</a>
 
         {% if app.user %}
 
