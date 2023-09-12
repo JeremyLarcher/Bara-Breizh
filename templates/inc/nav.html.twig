@@ -10,6 +10,7 @@
         {% if app.user %}
 
             {# bouton visible si l'utilisateur est connécté #}
+            <a href="{{ path('app_logout') }}" title="Deconnexion">Se déconnecter</a>
 
             {% if is_granted("ROLE_ADMIN") %}
 
@@ -20,6 +21,8 @@
         {% else %}
 
             {# bouton visible si l'utilisateur n'est pas connecté #}
+            <a href="{{ path('app_login') }}" title="Connexion">Se connecter</a>
+
 
         {% endif %}
 
