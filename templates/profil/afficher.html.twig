@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Mon  profil </h1>
+        <ul>
+            <li>Nom</li>
+            {{ utilisateur.nom }}
+            <li>Prénom</li>
+            {{ utilisateur.prenom }}
+            <li>Email</li>
+            {{ utilisateur.email }}
+            <li>Région</li>
+            {{ utilisateur.region }}
+        </ul>
+
+    <a href="{{ path('profil_supprimer') }}" title="Supprimer">Supprimer mon profil</a>
+
+{% endblock %}
+
+{% block title %}
+    {{ parent() }} | Mon profil
+{% endblock %}
+

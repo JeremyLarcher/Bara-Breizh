@@ -11,6 +11,7 @@
 
             {# bouton visible si l'utilisateur est connécté #}
             <a href="{{ path('app_logout') }}" title="Deconnexion">Se déconnecter</a>
+            <a href="{{ path('profil_afficher') }}" title="Profil">Mon profil</a>
 
             {% if is_granted("ROLE_ADMIN") %}
 
