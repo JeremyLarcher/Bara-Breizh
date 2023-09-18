@@ -8,6 +8,8 @@
     <title>
         {% block title %}Bara-Breizh{% endblock %}
     </title>
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
 <body>
@@ -15,6 +17,14 @@
     <header>
         {% include('inc/nav.html.twig') %}
     </header>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
 
     <main>
         {% block body %} {% endblock %}

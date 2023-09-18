@@ -44,6 +44,9 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\JoinColumn(nullable: false)]
     private ?Region $region = null;
 
+    #[ORM\OneToOne(inversedBy: 'utilisateur', cascade: ['persist', 'remove'])]
+    private ?Commentaire $commentaire = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -175,6 +178,18 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRegion(?Region $region): static
     {
         $this->region = $region;
+
+        return $this;
+    }
+
+    public function getCommentaire(): ?Commentaire
+    {
+        return $this->commentaire;
+    }
+
+    public function setCommentaire(?Commentaire $commentaire): static
+    {
+        $this->commentaire = $commentaire;
 
         return $this;
     }

@@ -5,6 +5,21 @@
 {% endblock %}
 
 {% block body %}
+    {% if app.user %}
+     <h1>Laissez-nous un commentaire</h1>
+        {{ form_start(commentaireForm) }}
+
+        {{ form_widget(commentaireForm) }}
+
+        <button>Soumettre</button>
+
+        {{ form_end(commentaireForm) }}
+
+    {% else %}
+
+                Connectez vous pour laisser un commentaire
+                <a href="{{ path('app_login') }}" title="Connexion">Se connecter</a>
+    {% endif %}
 
 {% endblock %}
 
