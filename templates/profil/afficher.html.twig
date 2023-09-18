@@ -11,7 +11,7 @@
             <li>Email</li>
             {{ utilisateur.email }}
             <li>Région</li>
-            {{ utilisateur.region }}
+            {{ utilisateur.region.nom }}
         </ul>
 
     <a href="{{ path('profil_supprimer') }}" title="Supprimer">Supprimer mon profil</a>

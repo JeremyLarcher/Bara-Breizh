@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Region;
 use App\Entity\Utilisateur;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -20,7 +23,16 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add ('prenom')
             ->add('nom')
-            ->add('region')
+            ->add('region', EntityType::class, [
+                'class' => Region::class,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('r')
+                        ->orderBy('r.nom', 'ASC');
+                },
+                'choice_label' => 'nom',
+                'placeholder'=> 'Selectionner la région',
+                'required' => true,
+            ])
             ->add ('newsletter')
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

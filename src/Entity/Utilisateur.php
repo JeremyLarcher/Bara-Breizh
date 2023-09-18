@@ -35,11 +35,14 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 50)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $region = null;
+
 
     #[ORM\Column]
     private ?bool $newsletter = null;
+
+    #[ORM\ManyToOne(inversedBy: 'utilisateurs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Region $region = null;
 
     public function getId(): ?int
     {
@@ -150,17 +153,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getRegion(): ?string
-    {
-        return $this->region;
-    }
 
-    public function setRegion(string $region): static
-    {
-        $this->region = $region;
-
-        return $this;
-    }
 
     public function isNewsletter(): ?bool
     {
@@ -170,6 +163,18 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNewsletter(bool $newsletter): static
     {
         $this->newsletter = $newsletter;
+
+        return $this;
+    }
+
+    public function getRegion(): ?Region
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?Region $region): static
+    {
+        $this->region = $region;
 
         return $this;
     }
