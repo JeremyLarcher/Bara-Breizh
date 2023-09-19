@@ -7,13 +7,17 @@
 {% block body %}
     {% if app.user %}
      <h1>Laissez-nous un commentaire</h1>
-        {{ form_start(commentaireForm) }}
+    <div class="form">
+            <div class="form-container">
+                {{ form_start(commentaireForm) }}
 
-        {{ form_widget(commentaireForm) }}
+                {{ form_widget(commentaireForm) }}
 
-        <button>Soumettre</button>
+                <button>Soumettre</button>
 
-        {{ form_end(commentaireForm) }}
+                {{ form_end(commentaireForm) }}
+            </div>
+    </div>
 
     {% else %}
 

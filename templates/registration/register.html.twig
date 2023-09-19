@@ -3,15 +3,20 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1>Création de compte</h1>
 
-    {{ form_errors(registrationForm) }}
+    <div class="form">
+        <div class="form-container">
 
-    {{ form_start(registrationForm) }}
-        {{ form_widget(registrationForm) }}
+        {{ form_errors(registrationForm) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        {{ form_start(registrationForm) }}
+            {{ form_widget(registrationForm) }}
+
+            <button type="submit" class="btn">Créer son compte</button>
+        {{ form_end(registrationForm) }}
+        </div>
+    </div>
 
 
 {% endblock %}

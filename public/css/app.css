@@ -1,3 +1,90 @@
+/*navbar*/
+    /* Styles pour la barre de navigation */
+
+        nav {
+            text-align: right; /* Alignez le texte à droite */
+        }
+        .nav-container {
+            background-color: beige; /* Fond beige pour la barre de navigation */
+            border-radius: 10px; /* Bordure arrondie */
+            padding: 1px 12px; /* Espace intérieur pour les liens */
+            display: inline-block;
+        }
+
+        ul {
+            list-style: none; /* Supprime les puces de liste */
+            padding: 0;
+        }
+
+        li {
+            display: inline-block; /* Les liens apparaissent côte à côte */
+            margin-right: 10px; /* Marge entre les liens */
+        }
+
+        a {
+            text-decoration: none; /* Supprime les soulignements des liens */
+            padding: 5px 10px; /* Espace intérieur pour les liens */
+            border: 1px solid #ccc; /* Bordure */
+            border-radius: 5px; /* Bordure arrondie */
+            transition: all 0.3s; /* Transition pour l'effet de grossissement */
+        }
+
+        a:hover {
+            background-color: #f0f0f0; /* Couleur de fond au survol */
+            transform: scale(1.1); /* Grossissement au survol */
+        }
+
+
+/*Les boutons*/
+.btn {
+    border-radius: 12px;
+    padding: 10px 24px;
+    margin: 15px;
+}
+.btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Les formulaire */
+
+    /* Styles pour centrer le formulaire */
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh; /* Cela centre le formulaire verticalement sur la page. Vous pouvez ajuster si nécessaire. */
+        }
+
+        /* Styles pour le formulaire */
+        .form-container {
+            max-width: 400px; /* Largeur maximale du formulaire */
+            padding: 20px;
+            border: 1px solid #ccc; /* Contour visible */
+            border-radius: 5px;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); /* Légère ombre à droite */
+        }
+
+        label{
+            display: block;
+        }
+
+        input,
+        textarea,
+        select {
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+            width: 150px;
+            max-width: 95%;
+
+        }
+
+
+/* Les commentaires */
+
+/* mise en page globale */
+
+
+
 .flash {
     padding: 20px;
     font-weight: bold;
@@ -6,19 +93,7 @@
     border-radius: 5px;
 }
 
-label{
-    display: block;
-}
 
-input,
-textarea,
-select {
-    margin-bottom: 1rem;
-    box-sizing: border-box;
-    width: 150px;
-    max-width: 50%;
-
-}
 .commentaires-list{
     box-sizing: border-box;
     border-radius: 5px;

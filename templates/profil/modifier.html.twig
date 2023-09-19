@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block body %}
-
-    {{ form_start(ModifierProfil) }}
-    {{ form_widget (ModifierProfil) }} <br>
-    <button type ="submit" class="button"> Validé </button>
-    {{ form_end(ModifierProfil) }}
+    <div class="form">
+        <div class="form-container">
+            {{ form_start(ModifierProfil) }}
+            {{ form_widget (ModifierProfil) }} <br>
+            <button type ="submit" class="button"> Validé </button>
+            {{ form_end(ModifierProfil) }}
+        </div>
+    </div>
 
 {% endblock %}
 
