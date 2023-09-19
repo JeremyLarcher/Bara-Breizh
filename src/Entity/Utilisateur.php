@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
@@ -18,6 +19,9 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\Length(min: 2, max: 180)]
+    #[Assert\NotBlank(message: 'veuillez renseigner votre adresse mail')]
+    #[Assert\Email(message: 'Veuillez renseigner une adresse mail valide')]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -30,9 +34,13 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\Length(min: 2, max: 50, minMessage: 'Le prénom doit contenir au minimum 2 lettres',maxMessage: 'Le prénom ne doit pas contenir plus de 50 lettres')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner votre prénom')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\Length(min: 2, max: 50, minMessage: 'Le nom doit contenir au minimum 2 lettres',maxMessage: 'Le nom ne doit pas contenir plus de 50 lettres')]
+    #[Assert\NotBlank(message: 'Veuillez renseigner votre nom')]
     private ?string $nom = null;
 
 
@@ -42,6 +50,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\ManyToOne(inversedBy: 'utilisateurs')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotBlank(message: 'Veuillez séléctionner une région')]
     private ?Region $region = null;
 
     #[ORM\OneToOne(inversedBy: 'utilisateur', cascade: ['persist', 'remove'])]

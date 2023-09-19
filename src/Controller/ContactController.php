@@ -22,7 +22,7 @@ class ContactController extends AbstractController
 
         $commentaireForm->handleRequest($request);
 
-        if ($commentaireForm->isSubmitted() ){
+        if ($commentaireForm->isSubmitted() && $commentaireForm->isValid() ){
             $commentaire->setUtilisateur($this->getUser());
             $entityManager->persist($commentaire);
             $entityManager->flush();

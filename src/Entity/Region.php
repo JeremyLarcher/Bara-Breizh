@@ -6,6 +6,7 @@ use App\Repository\RegionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RegionRepository::class)]
 class Region
@@ -16,6 +17,7 @@ class Region
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez sélectionner une région')]
     private ?string $nom = null;
 
     #[ORM\OneToMany(mappedBy: 'region', targetEntity: Utilisateur::class)]
