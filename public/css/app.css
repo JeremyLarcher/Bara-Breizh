@@ -81,7 +81,71 @@
 
 /* Les commentaires */
 
+
+/* Styles pour les commentaires */
+.commentaires-list {
+    text-align: center; /* Centre les commentaires horizontalement */
+}
+
+.commentaires-container {
+    white-space: nowrap; /* Empêche le retour à la ligne automatique */
+    overflow-x: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
+}
+
+.commentaire {
+    display: inline-block; /* Affiche les commentaires sur la même ligne */
+    width: 200px; /* Largeur du commentaire (ajustez selon vos besoins) */
+    margin-right: 10px; /* Marge entre les commentaires */
+    padding: 10px;
+    border: 1px solid black; /* Bordure noire visible */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+
+
 /* mise en page globale */
+
+/* Styles pour le pied de page (footer) */
+/* Styles pour le pied de page (footer) */
+.site-footer {
+    background-color: beige; /* Fond beige */
+    border-top: 1px solid black; /* Bordure noire en haut du pied de page */
+    padding: 20px 0; /* Espacement intérieur du pied de page */
+    display: flex; /* Afficher les éléments du pied de page en ligne */
+    justify-content: space-between; /* Espacez les éléments du pied de page */
+    flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+}
+
+/* Styles pour chaque section du pied de page */
+.footer-text,
+.social-links,
+.contact-info,
+.payment-methods {
+    flex-basis: calc(25% - 20px); /* Largeur de chaque section avec espace entre les éléments */
+    margin-right: 20px; /* Espacement entre les sections */
+    border: 1px solid black; /* Bordure noire autour de chaque section */
+    padding: 10px; /* Espacement intérieur de chaque section */
+    box-sizing: border-box; /* Inclure la bordure et la marge dans la largeur totale */
+}
+
+/* Styles pour les liens sociaux et les informations de contact */
+.social-links ul,
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li,
+.contact-info li {
+    margin-bottom: 5px; /* Marge entre les éléments de liste */
+}
+
+/* Styles pour les moyens de paiement */
+.payment-methods p {
+    margin: 0;
+    font-weight: bold; /* Texte en gras pour le titre des moyens de paiement */
+}
+
 
 
 
