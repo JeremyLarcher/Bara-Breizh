@@ -106,14 +106,21 @@
 /* mise en page globale */
 
 /* Styles pour le pied de page (footer) */
-/* Styles pour le pied de page (footer) */
+
 .site-footer {
     background-color: beige; /* Fond beige */
-    border-top: 1px solid black; /* Bordure noire en haut du pied de page */
+
+    /*border-top: 1px solid black; /* Bordure noire en haut du pied de page */
     padding: 20px 0; /* Espacement intérieur du pied de page */
+    margin-top: 20px;
     display: flex; /* Afficher les éléments du pied de page en ligne */
     justify-content: space-between; /* Espacez les éléments du pied de page */
     flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+    position: fixed; /* Fixer le pied de page en bas de la fenêtre */
+    bottom: 0; /* Le placer au bas de la fenêtre */
+    left: 0; /* Le placer tout à gauche */
+    right: 0; /* Le placer tout à droite */
+    z-index: 1000; /* Pour s'assurer qu'il est au-dessus du contenu */
 }
 
 /* Styles pour chaque section du pied de page */
@@ -121,9 +128,10 @@
 .social-links,
 .contact-info,
 .payment-methods {
-    flex-basis: calc(25% - 20px); /* Largeur de chaque section avec espace entre les éléments */
+    flex-basis: calc(20% - 20px); /* Largeur de chaque section avec espace entre les éléments */
     margin-right: 20px; /* Espacement entre les sections */
     border: 1px solid black; /* Bordure noire autour de chaque section */
+    border-radius: 15%;
     padding: 10px; /* Espacement intérieur de chaque section */
     box-sizing: border-box; /* Inclure la bordure et la marge dans la largeur totale */
 }
@@ -146,6 +154,44 @@
     font-weight: bold; /* Texte en gras pour le titre des moyens de paiement */
 }
 
+/* Styles pour la page de contact */
+.contact-connection{
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 60vh; /* Utilise toute la hauteur de la fenêtre */
+    margin: 0;
+}
+
+.contact-connection p {
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 20px; /* Espace intérieur de la div */
+    line-height: 1.8;
+
+}
+
+    /* Styles pour le conteneur des logos */
+        .logo-container {
+            display: flex; /* Affiche les logos sur la même ligne */
+            justify-content: space-between; /* Espacez les logos également */
+            align-items: center; /* Centre verticalement les logos */
+            width: 100%; /* Occupe la largeur de l'écran */
+            max-width: 100%; /* Ne dépasse pas la largeur de l'écran */
+            overflow-x: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
+            padding: 10px; /* Espace intérieur du conteneur */
+
+        }
+
+        /* Styles pour chaque logo */
+        .logo-container a {
+            text-decoration: none; /* Supprime les soulignements des liens */
+            margin: 0 10px; /* Marge entre les logos (ajustez selon vos besoins) */
+        }
+
+        .logo-container img {
+            max-width: 100%; /* Les logos ne dépasseront pas la largeur du conteneur */
+            height: auto; /* Maintient le rapport hauteur/largeur */
+        }
 
 
 

@@ -20,10 +20,20 @@
     </div>
 
     {% else %}
-
-                Connectez vous pour laisser un commentaire
-                <a href="{{ path('app_login') }}" title="Connexion">Se connecter</a>
+        <div class="contact-connection">
+        <p>Afin de nous laisser un avis<br>
+        Merci de vous connecter<br>
+                <a href="{{ path('app_login') }}" title="Connexion">Se connecter</a></p>
+        </div>
     {% endif %}
+
+    <div class="logo-container">
+        <a href="lien_site1"><img src="logo1.png" alt="Logo 1"></a>
+        <a href="lien_site2"><img src="logo2.png" alt="Logo 2"></a>
+        <a href="lien_site3"><img src="logo3.png" alt="Logo 3"></a>
+        <a href="lien_site4"><img src="logo4.png" alt="Logo 4"></a>
+    </div>
+
 
 {% endblock %}
 
