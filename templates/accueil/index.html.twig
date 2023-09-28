@@ -4,9 +4,34 @@
     {{ parent() }} | Accueil
 {% endblock %}
 
+
+
 {% block body %}
-    <h2>Commentaires</h2>
+    <section>
+        <div class="gallery-container">
+            <div class="gallery">
+                <div class="slide">
+                    <img src="photo1.jpg" alt="Photo 1">
+                </div>
+                <div class="slide">
+                    <img src="photo2.jpg" alt="Photo 2">
+                </div>
+                <div class="slide">
+                    <img src="photo3.jpg" alt="Photo 3">
+                </div>
+                <!-- Ajoutez d'autres photos ici -->
+            </div>
+            <button class="prev-button">Précédent</button>
+            <button class="next-button">Suivant</button>
+        </div>
+        <div>
+            <p>Ici une presentation du restaurant et de la cuisine ainsi que des patrons</p>
+        </div>
+    </section>
+
+
     <section class="commentaires-list">
+        <h2>Commentaires</h2>
         <div class="commentaires-container">
     {% for commentaire in commentaires %}
         <div class="commentaire">

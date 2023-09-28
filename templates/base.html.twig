@@ -10,9 +10,11 @@
     </title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
 </head>
 
 <body>
+
 
     <header>
         {% include('inc/nav.html.twig') %}
@@ -34,6 +36,10 @@
         {% include ('inc/footer.html.twig') %}
     </footer>
 
+
+    {% block javascripts %}
+        <script src="{{ asset('js/gallerie.js') }}"></script>
+    {% endblock %}
 </body>
 
 </html>

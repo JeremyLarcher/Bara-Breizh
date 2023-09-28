@@ -82,24 +82,24 @@
 /* Les commentaires */
 
 
-/* Styles pour les commentaires */
-.commentaires-list {
-    text-align: center; /* Centre les commentaires horizontalement */
-}
+    /* Styles pour les commentaires */
+    .commentaires-list {
+        text-align: center; /* Centre les commentaires horizontalement */
+    }
 
-.commentaires-container {
-    white-space: nowrap; /* Empêche le retour à la ligne automatique */
-    overflow-x: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
-}
+    .commentaires-container {
+        white-space: nowrap; /* Empêche le retour à la ligne automatique */
+        overflow-x: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
+    }
 
-.commentaire {
-    display: inline-block; /* Affiche les commentaires sur la même ligne */
-    width: 200px; /* Largeur du commentaire (ajustez selon vos besoins) */
-    margin-right: 10px; /* Marge entre les commentaires */
-    padding: 10px;
-    border: 1px solid black; /* Bordure noire visible */
-    border-radius: 10px; /* Coins arrondis */
-}
+    .commentaire {
+        display: inline-block; /* Affiche les commentaires sur la même ligne */
+        width: 200px; /* Largeur du commentaire (ajustez selon vos besoins) */
+        margin-right: 10px; /* Marge entre les commentaires */
+        padding: 10px;
+        border: 1px solid black; /* Bordure noire visible */
+        border-radius: 10px; /* Coins arrondis */
+    }
 
 
 
@@ -107,52 +107,52 @@
 
 /* Styles pour le pied de page (footer) */
 
-.site-footer {
-    background-color: beige; /* Fond beige */
+    .site-footer {
+        background-color: beige; /* Fond beige */
 
-    /*border-top: 1px solid black; /* Bordure noire en haut du pied de page */
-    padding: 20px 0; /* Espacement intérieur du pied de page */
-    margin-top: 20px;
-    display: flex; /* Afficher les éléments du pied de page en ligne */
-    justify-content: space-between; /* Espacez les éléments du pied de page */
-    flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
-    position: fixed; /* Fixer le pied de page en bas de la fenêtre */
-    bottom: 0; /* Le placer au bas de la fenêtre */
-    left: 0; /* Le placer tout à gauche */
-    right: 0; /* Le placer tout à droite */
-    z-index: 1000; /* Pour s'assurer qu'il est au-dessus du contenu */
-}
+        /*border-top: 1px solid black; /* Bordure noire en haut du pied de page */
+        padding: 20px 0; /* Espacement intérieur du pied de page */
+        margin-top: 20px;
+        display: flex; /* Afficher les éléments du pied de page en ligne */
+        justify-content: space-between; /* Espacez les éléments du pied de page */
+        flex-wrap: wrap; /* Permettre le retour à la ligne si nécessaire */
+        position: fixed; /* Fixer le pied de page en bas de la fenêtre */
+        bottom: 0; /* Le placer au bas de la fenêtre */
+        left: 0; /* Le placer tout à gauche */
+        right: 0; /* Le placer tout à droite */
+        z-index: 1000; /* Pour s'assurer qu'il est au-dessus du contenu */
+    }
 
-/* Styles pour chaque section du pied de page */
-.footer-text,
-.social-links,
-.contact-info,
-.payment-methods {
-    flex-basis: calc(20% - 20px); /* Largeur de chaque section avec espace entre les éléments */
-    margin-right: 20px; /* Espacement entre les sections */
-    border: 1px solid black; /* Bordure noire autour de chaque section */
-    border-radius: 15%;
-    padding: 10px; /* Espacement intérieur de chaque section */
-    box-sizing: border-box; /* Inclure la bordure et la marge dans la largeur totale */
-}
+        /* Styles pour chaque section du pied de page */
+        .footer-text,
+        .social-links,
+        .contact-info,
+        .payment-methods {
+            flex-basis: calc(20% - 20px); /* Largeur de chaque section avec espace entre les éléments */
+            margin-right: 20px; /* Espacement entre les sections */
+            border: 1px solid black; /* Bordure noire autour de chaque section */
+            border-radius: 15%;
+            padding: 10px; /* Espacement intérieur de chaque section */
+            box-sizing: border-box; /* Inclure la bordure et la marge dans la largeur totale */
+        }
 
-/* Styles pour les liens sociaux et les informations de contact */
-.social-links ul,
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-}
+        /* Styles pour les liens sociaux et les informations de contact */
+        .social-links ul,
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.social-links li,
-.contact-info li {
-    margin-bottom: 5px; /* Marge entre les éléments de liste */
-}
+        .social-links li,
+        .contact-info li {
+            margin-bottom: 5px; /* Marge entre les éléments de liste */
+        }
 
-/* Styles pour les moyens de paiement */
-.payment-methods p {
-    margin: 0;
-    font-weight: bold; /* Texte en gras pour le titre des moyens de paiement */
-}
+        /* Styles pour les moyens de paiement */
+        .payment-methods p {
+            margin: 0;
+            font-weight: bold; /* Texte en gras pour le titre des moyens de paiement */
+        }
 
 /* Styles pour la page de contact */
 .contact-connection{
@@ -186,12 +186,56 @@
         .logo-container a {
             text-decoration: none; /* Supprime les soulignements des liens */
             margin: 0 10px; /* Marge entre les logos (ajustez selon vos besoins) */
+            width: 10%;
         }
 
         .logo-container img {
             max-width: 100%; /* Les logos ne dépasseront pas la largeur du conteneur */
             height: auto; /* Maintient le rapport hauteur/largeur */
         }
+
+/* Styles pour la galerie photo */
+    .gallery-container {
+        float: left; /* Positionnez le conteneur à gauche */
+        width: 50%; /* Occupe la moitié de la largeur de la page */
+        max-width: 50%; /* Limite la largeur à 50% de la largeur de la page */
+        box-sizing: border-box; /* Inclure la bordure et la marge dans la largeur totale */
+        padding: 20px; /* Espacement intérieur du conteneur (ajustez selon vos besoins) */
+    }
+
+    .gallery {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .slide {
+        flex: 0 0 100%; /* Une seule photo visible à la fois */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Styles pour les boutons précédent et suivant */
+    .prev-button,
+    .next-button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .prev-button {
+        float: left;
+    }
+
+    .next-button {
+        float: right;
+    }
 
 
 
