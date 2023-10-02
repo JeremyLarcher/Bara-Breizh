@@ -7,8 +7,8 @@
 
 
 {% block body %}
-    <section class="row">
-        <div class="col-8">
+    <section class="row justify-content-around m-5">
+        <div class="col-4">
             <div id="photo" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicateurs
@@ -45,19 +45,19 @@
         </div>
 
 
-        <div class="col-4">
-            <p>Ici une presentation du restaurant et de la cuisine ainsi que des patrons</p>
+        <div class="col-4 align-self-center">
+            <p> Chantal et Thierry vous accueillent dans leur crêperie "Bara-Breizh" à l'entrée de la presqu'île de Rhuys à St-Armel, pour profiter d'un moment agréable et convivial en famille ou entre amis pour déguster des galettes et crêpes fait à la demande dans la tradition et l'originalité.</p>
         </div>
     </section>
 
 
-    <section class="row">
+    <section class="row justify-content-around m-5">
         <h2>Commentaires</h2>
-            <div class="commentaires-container">
-                <div class="carousel">
-                <div class="arrow arrow-left"></div>
+
+
+
                     {% for commentaire in commentaires %}
-                        <div class="commentaire {% if loop.index <= 3 %}visible{% endif %}">
+                        <div class="col-2 border border-3 rounded">
 
 
                             {{ commentaire.note }} / 5 <br>
@@ -66,12 +66,12 @@
 
                         </div>
                     {% endfor %}
-                <div class="arrow arrow-right"></div>
-                </div>
-            </div>
+
+
+
     </section>
 
-    <section class="row">
+    <section class="row m-5">
         <div class="col-3">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2231.1271498006554!2d-2.7074581109809683!3d47.57041436173627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x481002b22585627b%3A0xf4cabc2cc11de464!2sBARA%20BREIZH!5e0!3m2!1sfr!2sfr!4v1695130972570!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>

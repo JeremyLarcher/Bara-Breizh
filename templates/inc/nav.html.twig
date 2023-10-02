@@ -1,11 +1,20 @@
-<div class="container-fluid">
-<nav class="navbar navbar-expand-md nav-tabs justify-content-end">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar navbar-expand-md ">
+    <div class="container-fluid justify-content-end">
+
+        <a class="navbar-brand" href="{{ path('accueil_index') }}">
+            <img src="{{ asset('img/logo/logoRestaurant2.png') }}" alt="logo">
+        </a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuretractable" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="menuretractable">
 
-    <ul class="navbar-nav mr-auto">
+
+    <ul class="nav nav-tabs">
+
+
+
 
         {# bouton visible dans tout les cas #}
         <li class="nav-item"><a class="nav-link" href="{{ path('accueil_index') }}" title="Accueil">Accueil</a></li>
@@ -37,5 +46,5 @@
     </ul>
     </div>
 
+    </div>
 </nav>
-</div>
