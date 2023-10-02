@@ -1,34 +1,41 @@
-<nav>
-    <div class="nav-container">
-    <ul>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md nav-tabs justify-content-end">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
 
         {# bouton visible dans tout les cas #}
-        <li><a href="{{ path('accueil_index') }}" title="Accueil">Accueil</a></li>
-        <li><a href="{{ path('contact_afficher') }}" title="Accueil">Contact</a></li>
-        <li><a href="{{ path('menu_afficher') }}" title="Accueil">Menu</a></li>
-        <li><a href="{{ path('partenaireslocaux_afficher') }}" title="Accueil">Partenaires Locaux</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('accueil_index') }}" title="Accueil">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('contact_afficher') }}" title="Accueil">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('menu_afficher') }}" title="Accueil">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ path('partenaireslocaux_afficher') }}" title="Accueil">Partenaires Locaux</a></li>
 
         {% if app.user %}
 
             {# bouton visible si l'utilisateur est connécté #}
-            <li><a href="{{ path('app_logout') }}" title="Deconnexion">Se déconnecter</a></li>
-            <li><a href="{{ path('profil_afficher') }}" title="Profil">Mon profil</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}" title="Deconnexion">Se déconnecter</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('profil_afficher') }}" title="Profil">Mon profil</a></li>
 
             {% if is_granted("ROLE_ADMIN") %}
 
                 {# bouton visible si l'utilisateur connecté a le role administrateur #}
-                <li><a href="{{ path('admin_dashboard') }}" title="Admin">Admin</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('admin_dashboard') }}" title="Admin">Admin</a></li>
 
             {% endif %}
 
         {% else %}
 
             {# bouton visible si l'utilisateur n'est pas connecté #}
-            <li><a href="{{ path('app_login') }}" title="Connexion">Se connecter</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('app_login') }}" title="Connexion">Se connecter</a></li>
 
 
         {% endif %}
 
     </ul>
     </div>
+
 </nav>
+</div>

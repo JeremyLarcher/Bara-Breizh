@@ -79,31 +79,70 @@
         }
 
 
-/* Les commentaires */
-
-
-    /* Styles pour les commentaires */
+/* Styles pour la liste de commentaires */
     .commentaires-list {
-        text-align: center; /* Centre les commentaires horizontalement */
+        text-align: center; /* Centre le contenu horizontalement */
+        margin-top: 20px; /* Marge supérieure pour l'espace */
+        margin-bottom: 20px; /* Marge inférieure pour l'espace */
     }
+
 
     .commentaires-container {
         white-space: nowrap; /* Empêche le retour à la ligne automatique */
-        overflow-x: auto; /* Ajoute une barre de défilement horizontale si nécessaire */
+        overflow: hidden; /* Masque le débordement horizontal */
+        position: relative; /* Position relative pour les flèches */
+    }
+
+    .carousel {
+        display: flex; /* Affiche les commentaires côte à côte */
+        transition: transform 0.3s ease-in-out; /* Animation du défilement */
     }
 
     .commentaire {
-        display: inline-block; /* Affiche les commentaires sur la même ligne */
-        width: 200px; /* Largeur du commentaire (ajustez selon vos besoins) */
-        margin-right: 10px; /* Marge entre les commentaires */
+        width: 200px;
+        margin-right: 10px; /* Espacement entre les commentaires */
         padding: 10px;
-        border: 1px solid black; /* Bordure noire visible */
-        border-radius: 10px; /* Coins arrondis */
+        border: 1px solid black;
+        border-radius: 10px;
+        text-align: left; /* Alignez le texte à gauche */
+    }
+
+    /* Styles pour les flèches */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .arrow-left {
+        left: 10px; /* Espacement de la flèche de gauche */
+    }
+
+    .arrow-right {
+        right: 10px; /* Espacement de la flèche de droite */
     }
 
 
 
 /* mise en page globale */
+    /* Styles pour les sections */
+    .gallery-section,
+    .commentaires-section,
+    .map-section {
+        text-align: center; /* Centre le contenu horizontalement */
+        margin: 20px 0; /* Marge supérieure et inférieure pour l'espace entre les sections */
+    }
+
+/* Ajoutez d'autres styles spécifiques à chaque section si nécessaire */
+
 
 /* Styles pour le pied de page (footer) */
 
@@ -248,15 +287,3 @@
 }
 
 
-.commentaires-list{
-    box-sizing: border-box;
-    border-radius: 5px;
-    display: inline-block;
-    margin: 1rem;
-}
-.commentaires {
-    display: inline-block;
-    border-radius: 5px;
-    margin: 1rem;
-    box-sizing: border-box;
-}
