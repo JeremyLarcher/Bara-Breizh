@@ -3,8 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<div class="form">
-    <div class="form-container">
+<div class="row m-5 justify-content-center form">
+    <div class="col-md-3 border border-3 rounded form-container">
         <form method="post">
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>

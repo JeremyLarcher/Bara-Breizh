@@ -7,15 +7,16 @@
 {% block body %}
     <section class="row justify-content-center m-5">
         {% if app.user %}
-            <div class="col-md-5 form">
+            <div class="col-md-5 border border-3 rounded form">
          <h1>Laissez-nous un commentaire</h1>
 
                 <div class="form-container">
                     {{ form_start(commentaireForm) }}
 
                     {{ form_widget(commentaireForm) }}
+                    <br>
 
-                    <button>Soumettre</button>
+                    <button class="button btn btn-lg btn-primary">Soumettre</button>
 
                     {{ form_end(commentaireForm) }}
                 </div>
