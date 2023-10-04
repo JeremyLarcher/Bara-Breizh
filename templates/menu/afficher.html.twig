@@ -5,11 +5,16 @@
 {% endblock %}
 
 {% block body %}
+    <div class="container-fluid">
 
-    <section class="row">
+    <section class="row m-5">
         <img src="{{ asset('img/menu/menuRestaurant.png') }}" alt="menu restaurant" class="rounded img-fluid">
-
+        <a href="{{ path('menu_telecharger') }}">Télécharger le menu en PDF</a>
     </section>
+    </div>
+
+
+
 
 {% endblock %}
 
