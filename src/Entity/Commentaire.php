@@ -24,7 +24,7 @@ class Commentaire
     #[Assert\NotBlank(message: 'Veuillez sélectionner une note')]
     private ?int $note = null;
 
-    #[ORM\OneToOne(mappedBy: 'commentaire', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'commentaire', cascade: ['persist', 'remove'])]
     private ?Utilisateur $utilisateur = null;
 
     public function getId(): ?int

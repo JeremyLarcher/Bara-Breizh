@@ -3,13 +3,80 @@
 {% block title %}{{ parent() }} | Administrateur{% endblock %}
 
 {% block body %}
+    <section>
+        <h2 class="text-center">Tableau de bord de l'administrateur</h2>
+    </section>
 
-    <h1>Tableau de bord de l'administrateur</h1>
+    <section class="row m-5 justify-content-center">
 
-    <p>Nombre total d'utilisateurs : {{ totalUsers }}</p>
-    <p>Nombre total de commentaires : {{ totalComments }}</p>
-    <p>Moyenne des notes : {{ averageRating }}</p>
-    <p>Région la plus fréquemment utilisée : {{ regionLaPlusFrequente }}</p>
-    <p>Nombre d'utilisateurs dans cette région : {{ nombreUtilisateurs }}</p>
+        <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Moyenne des notes</h2>
+            </div>
+            <div class="card-body">
+                <p>Nombre total d'utilisateurs : {{ totalUsers }}</p>
+                <p>Nombre total de commentaires : {{ totalComments }}</p>
+                <p>Moyenne des notes : {{ averageRating }}</p>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Région</h2>
+                </div>
+                <div class="card-body">
+                    <p>Région la plus fréquemment utilisée : {{ regionLaPlusFrequente }}</p>
+                    <p>Nombre d'utilisateurs dans cette région : {{ nombreUtilisateurs }}</p>
+
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <h2 class="text-center">Répartition des utilisateurs par région</h2>
+    </section>
+
+    <section class="row m-5">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Région</th>
+                    <th>Nombre d'utilisateurs</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for resultat in resultats %}
+                <tr>
+                    <td>{{ resultat.region }}</td>
+                    <td>{{ resultat.nombreUtilisateurs }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="row m-5">
+        <h2 class="text-center">Liste des commentaires</h2>
+    </section>
+
+    <section class="row m-5">
+        <ul>
+            {% for commentaireAvecUtilisateur in commentairesAvecUtilisateur %}
+                <li>
+                    <strong>{{ commentaireAvecUtilisateur.utilisateurNom }}</strong>:
+                    {{ commentaireAvecUtilisateur.commentaire }} (Note: {{ commentaireAvecUtilisateur.note }})
+                    <a href="{{ path('admin_supprimer_commentaire', {'id': commentaireAvecUtilisateur.id}) }}">Supprimer</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 
 {% endblock %}

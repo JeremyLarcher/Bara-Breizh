@@ -53,7 +53,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank(message: 'Veuillez séléctionner une région')]
     private ?Region $region = null;
 
-    #[ORM\OneToOne(inversedBy: 'utilisateur', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'utilisateur')]
     private ?Commentaire $commentaire = null;
 
     public function getId(): ?int
