@@ -11,6 +11,23 @@
         <img src="{{ asset('img/menu/menuRestaurant.png') }}" alt="menu restaurant" class="rounded img-fluid">
         <a href="{{ path('menu_telecharger') }}">Télécharger le menu en PDF</a>
     </section>
+
+        <section class="row m-5">
+            <h2 class="text-center">Galette de saison</h2>
+        </section>
+
+        {% if ardoise is not null %}
+        <section class="row m-5">
+            <div class="col-md-6 text-center">
+                <img src="{{ asset('img/ardoise/' ~ ardoise.getNomPhoto()) }}" alt="{{ ardoise.getTitre() }}" class="rounded img-fluid" width="60%">
+            </div>
+            <div class="col-md-6 text-center">
+                <h3>{{ ardoise.getTitre() }}</h3>
+                <p>{{ ardoise.getDescriptif() }}</p>
+            </div>
+        </section>
+        {% endif %}
+
     </div>
 
 

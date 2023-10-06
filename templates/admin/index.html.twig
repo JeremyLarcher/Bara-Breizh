@@ -9,22 +9,36 @@
 
     <section class="row m-5 justify-content-center">
 
-        <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">
-                <h2 class="card-title">Moyenne des notes</h2>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Moyenne des notes</h2>
+                </div>
+                <div class="card-body">
+                    <p>Nombre total d'utilisateurs : {{ totalUsers }}</p>
+                    <p>Nombre total de commentaires : {{ totalComments }}</p>
+                    <p>Moyenne des notes : {{ averageRating }}</p>
+                </div>
+                <div class="card-footer"></div>
             </div>
-            <div class="card-body">
-                <p>Nombre total d'utilisateurs : {{ totalUsers }}</p>
-                <p>Nombre total de commentaires : {{ totalComments }}</p>
-                <p>Moyenne des notes : {{ averageRating }}</p>
-            </div>
-            <div class="card-footer"></div>
         </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Ardoise</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Ardoise actuelle : {{ ardoise.getTitre() }}</p>
+                        <p><a href="{{ path('admin_editArdoise') }}">Modifier l'ardoise</a> </p>
+
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Région</h2>

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ArdoiseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,10 +12,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class MenuController extends AbstractController
 {
     #[Route('/menu', name: 'menu_afficher')]
-    public function afficher(): Response
+    public function afficher(ArdoiseRepository $ardoiseRepository): Response
     {
+
+        // Récupérer les données de la table Ardoise
+        $ardoise = $ardoiseRepository->findOneBy([]);
+
         return $this->render('menu/afficher.html.twig', [
             'controller_name' => 'MenuController',
+            'ardoise' => $ardoise,
         ]);
     }
 

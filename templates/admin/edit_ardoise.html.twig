@@ -2,12 +2,21 @@
 
 {% block body %}
 
-    <h1>Edit Ardoise</h1>
+    <section>
+        <h2 class="text-center">Modifier l'ardoise</h2>
+    </section>
+
+<div class="row m-5 justify-content-center form">
+    <div class="col-md-5 border border-3 rounded form-container">
 
     {{ form_start(form) }}
     {{ form_widget(form) }}
+        <div class="m-5">
     <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </div>
     {{ form_end(form) }}
+    </div>
+</div>
 
 {% endblock %}
 

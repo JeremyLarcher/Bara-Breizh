@@ -7,10 +7,13 @@ use App\Entity\Commentaire;
 use App\Entity\Region;
 use App\Entity\Utilisateur;
 use App\Form\ArdoiseType;
+use App\Repository\ArdoiseRepository;
 use App\Repository\CommentaireRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use http\Env\Request;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     #[Route('/dashboard', name: 'dashboard')]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager, ArdoiseRepository $ardoiseRepository): Response
     {
 
 
@@ -70,6 +73,9 @@ class AdminController extends AbstractController
 
         $commentairesAvecUtilisateur = $query->getResult();
 
+        // Récupérer les données de la table Ardoise
+        $ardoise = $ardoiseRepository->findOneBy([]);
+
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
             'totalUsers' => $totalUsers,
@@ -79,6 +85,7 @@ class AdminController extends AbstractController
             'nombreUtilisateurs' => $nombreUtilisateurs,
             'resultats' => $resultats,
             'commentairesAvecUtilisateur' => $commentairesAvecUtilisateur,
+            'ardoise' => $ardoise,
         ]);
 
 
@@ -118,15 +125,15 @@ class AdminController extends AbstractController
     }
 
 
-   /* #[Route('/editArdoise', name: 'editArdoise')]
-    public function editArdoise(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/editArdoise', name: 'editArdoise')]
+    public function editArdoise(Request $request, EntityManagerInterface $entityManager, ArdoiseRepository $ardoiseRepository): Response
     {
-        // Récupérer l'instance existante d'Ardoise depuis la base de données (par exemple, en utilisant l'ID 1)
-        $repository = $this->getDoctrine()->getRepository(Ardoise::class);
-        $ardoise = $repository->find(1);
+
+        // Récupérer l'ardoise existante
+        $ardoise = $ardoiseRepository->findOneBy([]);
 
         if (!$ardoise) {
-            throw $this->createNotFoundException('Aucune instance d\'Ardoise trouvée');
+            $ardoise = new Ardoise();
         }
 
         $form = $this->createForm(ArdoiseType::class, $ardoise);
@@ -134,19 +141,25 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // L'entité $ardoise est déjà synchronisée avec les données du formulaire
-            // Vous n'avez pas besoin de faire $entityManager->persist($ardoise) car il est déjà géré par Doctrine
+            // Gérer l'envoi de la nouvelle image (si elle a été téléchargée)
+            $imageFile = $form->get('imageFile')->getData();
 
+            if ($imageFile) {
+                // Mettre à jour le nom de la photo avec un nom unique (géré par VichUploaderBundle)
+                $ardoise->setImageFile($imageFile);
+            }
 
+            // Enregistrer l'ardoise
+            $entityManager->persist($ardoise);
             $entityManager->flush();
 
-            // Redirigez vers la page de confirmation ou une autre page
             return $this->redirectToRoute('menu_afficher');
         }
+
 
         return $this->render('admin/edit_ardoise.html.twig', [
             'form' => $form->createView(),
         ]);
-    }*/
+    }
 
 }
