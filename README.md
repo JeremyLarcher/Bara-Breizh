@@ -26,6 +26,7 @@ Le site contient :
 Environnement technique : 
   - Symfony 5.4 / PHP 8.2 / TWIG
   - Bootstrap
+  - JavaScript
   - MySQL / PHPmyAdmin / WampServer
   - Balsamiq
 
