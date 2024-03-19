@@ -12,9 +12,6 @@ Maquettes
 ![Mobile 1](https://github.com/JeremyLarcher/Bara-Breizh/assets/121985653/64d7b651-8d29-45ae-b56a-860b21d908d0)
 ![Accueil PC](https://github.com/JeremyLarcher/Bara-Breizh/assets/121985653/0d1d9bd4-ddfc-4abd-89a9-f3367af6ea2d)
 
-Diagramme de classe
-
-![diagramme de classe ](https://github.com/JeremyLarcher/Bara-Breizh/assets/121985653/250806dd-5ddc-4fcb-9fc7-d4915fc09d10)
 
 
 Le site contient :
