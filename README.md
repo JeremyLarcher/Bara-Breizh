@@ -1,4 +1,4 @@
-Réalisation d'un site internet pour le compte de la crêperie BARA-BREIZH.
+Réalisation d'un site internet responsif pour le compte de la crêperie BARA-BREIZH.
 
 Le projet à commencé par un échange avec les propriétaires pour identifier leurs besoins.
 Suite à cet échange j'ai pu réfléchir à la conception du site et réaliser le maquettage en pensant mobile first.
